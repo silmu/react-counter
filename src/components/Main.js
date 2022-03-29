@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
-// import Button from './Button';
-// import addFive from '../add-five';
-
-// const addThree = () => {
-//   console.log('Add 3 is clicked');
-// };
+import Button from './Button';
+import { addFifty } from '../add-fifty';
 
 //Main here is changed from function component to class component so number in circle would be re-rendering
 
@@ -30,6 +26,9 @@ class Main extends Component {
   removeFive = () => {
     this.setState({ counter: this.state.counter - 5 });
   };
+  addThirty = () => {
+    this.setState({ counter: this.state.counter + 30 });
+  };
 
   render() {
     return (
@@ -41,13 +40,16 @@ class Main extends Component {
           <button onClick={this.addFive}>+ 5</button>
           <button onClick={this.addOne}>+ 1</button>
           <button onClick={this.reset}>Reset</button>
-          <button onClick={this.removeOne}>- 1</button>
-          <button onClick={this.removeFive}>-5</button>
+          <Button click={this.removeOne} name="-1" />
+          <Button click={this.removeFive} name="-5" />
+          <Button click={this.addThirty} name="+30" />
 
-          {/* <Button name="+ 5" click={addFive} counter={this.state.counter} /> */}
-          {/* <Button name="Reset" />
-          <Button name="- 1" />
-          <Button name="- 5" /> */}
+          <Button
+            name="+ 50"
+            click={() => {
+              addFifty(this);
+            }}
+          />
         </div>
       </main>
     );
