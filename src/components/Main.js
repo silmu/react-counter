@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import Button from './Button';
+import Button from './UI components/Button';
+import Circle from './Circle';
 // import { addFifty, removeFifty } from '../counter-functions';
 
 //Main here is changed from function component to class component so number in circle would be re-rendering
@@ -31,11 +32,18 @@ class Main extends Component {
   };
 
   render() {
+    let className = 'even';
+    if (this.state.counter % 2) {
+      className = 'odd';
+      console.log(className);
+    }
+
     return (
       <main>
-        <div className="circle">
+        <Circle counter={this.state.counter} className={className}></Circle>
+        {/* <div className="circle">
           <div className="number">{this.state.counter}</div>
-        </div>
+        </div>*/}
         <div className="buttons">
           {/* Buttons not as components */}
           {/* <button onClick={this.addFiveHandler}>+ 5</button>

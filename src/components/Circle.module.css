@@ -1,0 +1,25 @@
+.odd,
+.even {
+  width: 200px;
+  height: 200px;
+  border: 1px solid lightblue;
+  border-radius: 50%;
+  background-color: lightblue;
+  margin: 1rem auto;
+  display: flex;
+}
+
+.odd {
+  background-color: paleturquoise;
+  border: 1px solid paleturquoise;
+}
+
+.number {
+  color: white;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}

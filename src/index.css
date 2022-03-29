@@ -6,38 +6,10 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-header,
-footer {
-  background-color: slateblue;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
 main {
   max-width: 1200px;
   padding: 1rem;
   margin: 0 auto;
-}
-
-.circle {
-  width: 200px;
-  height: 200px;
-  border: 1px solid lightblue;
-  border-radius: 50%;
-  background-color: lightblue;
-  margin: 1rem auto;
-  display: flex;
-}
-
-.number {
-  color: white;
-  width: 100%;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
 }
 
 .buttons {
@@ -47,23 +19,4 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-button {
-  text-align: center;
-  width: 130px;
-  padding: 1rem 2.5rem;
-  margin: 0.5rem;
-  background-color: lightgray;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  filter: brightness(105%);
-  cursor: pointer;
-}
-
-button:active {
-  filter: brightness(98%);
 }
