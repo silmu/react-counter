@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from './Button';
-import { addFifty } from '../add-fifty';
+// import { addFifty, removeFifty } from '../counter-functions';
 
 //Main here is changed from function component to class component so number in circle would be re-rendering
 
@@ -11,22 +11,22 @@ class Main extends Component {
   };
 
   //Event on click is handled by this method
-  addFive = () => {
+  addFiveHandler = () => {
     this.setState({ counter: this.state.counter + 5 });
   };
-  addOne = () => {
+  addOneHandler = () => {
     this.setState({ counter: this.state.counter + 1 });
   };
-  reset = () => {
+  resetHandler = () => {
     this.setState({ counter: 0 });
   };
-  removeOne = () => {
+  removeOneHandler = () => {
     this.setState({ counter: this.state.counter - 1 });
   };
-  removeFive = () => {
+  removeFiveHandler = () => {
     this.setState({ counter: this.state.counter - 5 });
   };
-  addThirty = () => {
+  addThirtyHandler = () => {
     this.setState({ counter: this.state.counter + 30 });
   };
 
@@ -37,19 +37,32 @@ class Main extends Component {
           <div className="number">{this.state.counter}</div>
         </div>
         <div className="buttons">
-          <button onClick={this.addFive}>+ 5</button>
-          <button onClick={this.addOne}>+ 1</button>
-          <button onClick={this.reset}>Reset</button>
-          <Button click={this.removeOne} name="-1" />
-          <Button click={this.removeFive} name="-5" />
-          <Button click={this.addThirty} name="+30" />
+          {/* Buttons not as components */}
+          {/* <button onClick={this.addFiveHandler}>+ 5</button>
+          <button onClick={this.addOneHandler}>+ 1</button>
+          <button onClick={this.reset}>Reset</button> */}
 
-          <Button
+          {/* Buttons as components. The first button has value as example */}
+          <Button click={this.addFiveHandler} value="+ 5"></Button>
+          <Button click={this.addOneHandler}>+ 1</Button>
+          <Button click={this.resetHandler}>Reset</Button>
+          <Button click={this.removeOneHandler}>- 1</Button>
+          <Button click={this.removeFiveHandler}>- 5</Button>
+          <Button click={this.addThirtyHandler}>+ 30</Button>
+
+          {/* Buttons as components with function outside of Main */}
+          {/* <Button
             name="+ 50"
             click={() => {
               addFifty(this);
             }}
           />
+          <Button
+            name="- 50"
+            click={() => {
+              removeFifty(this);
+            }}
+          ></Button> */}
         </div>
       </main>
     );
